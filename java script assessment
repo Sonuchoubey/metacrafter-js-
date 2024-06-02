@@ -1,0 +1,39 @@
+// Create a variable to hold your NFTs
+const NFTS = [];
+
+// Function to mint a new NFT
+function mintNFT(username, transactionCount, paytmBalance, membershipStatus, rewardPoints, linkedServices) {
+    const NFT = {
+        username: username,
+        transactionCount: transactionCount,
+        paytmBalance: paytmBalance,
+        membershipStatus: membershipStatus,
+        rewardPoints: rewardPoints,
+        linkedServices: linkedServices,
+    }
+    console.log("Minted: " + username);
+    NFTS.push(NFT);
+}
+
+// Function to list all NFTs
+function listNFTS() {
+    for(let i = 0; i < NFTS.length; i++){
+        console.table(NFTS[i]);
+    }
+}
+
+// Function to get the total supply of NFTs
+function getTotalSupply() {
+    console.log("Total NFT's: " + NFTS.length);
+}
+
+// Minting some NFTs
+mintNFT("user_ashish", 500, 15000, "Gold", 1200, ["Paytm Wallet", "Paytm Postpaid"]);
+mintNFT("user_neha", 300, 8000, "Silver", 800, ["Paytm Wallet", "Paytm Insurance"]);
+mintNFT("user_rahul", 700, 20000, "Platinum", 2000, ["Paytm Wallet", "Paytm Bank", "Paytm Postpaid"]);
+mintNFT("user_ria", 200, 5000, "Silver", 600, ["Paytm Wallet", "Paytm Insurance"]);
+mintNFT("user_ankit", 1000, 30000, "Platinum", 3000, ["Paytm Wallet", "Paytm Bank", "Paytm Postpaid", "Paytm Insurance"]);
+mintNFT("user_kiran", 400, 10000, "Gold", 1500, ["Paytm Wallet", "Paytm Postpaid"]);
+
+listNFTS();
+getTotalSupply();
